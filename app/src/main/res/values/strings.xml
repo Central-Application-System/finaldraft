@@ -15,5 +15,6 @@
     <string name="hod_details">HOD details</string>
     <string name="employee_number">employee number</string>
     <string name="register">register</string>
+    <string name="empoyee_number">register</string>
 
 </resources>
