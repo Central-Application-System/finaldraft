@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="?attr/actionBarSize"
+    android:background="@drawable/clapps"
+    tools:context=".profile">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+
+        android:backgroundTint="@color/blue"/>
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="160dp"
+        android:layout_height="148dp"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/emcu"
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="6dp"
+        tools:ignore="MissingConstraints"
+        android:contentDescription="open_christain_university" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="160dp"
+        android:layout_height="148dp"
+        app:srcCompat="@drawable/kwalu"
+        tools:layout_editor_absoluteX="225dp"
+        tools:layout_editor_absoluteY="4dp"
+        android:scaleType="fitCenter"
+        tools:ignore="MissingConstraints"
+        android:contentDescription="open_university_of_eswatini"/>
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="160dp"
+        android:layout_height="158dp"
+        app:srcCompat="@drawable/limko"
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="204dp"
+        android:scaleType="fitCenter"
+        tools:ignore="MissingConstraints"
+        android:contentDescription="open_lomkokwing_university"/>
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="160dp"
+        android:layout_height="158dp"
+        app:srcCompat="@drawable/sanu"
+        tools:layout_editor_absoluteX="225dp"
+        tools:layout_editor_absoluteY="208dp"
+        android:scaleType="fitCenter"
+        tools:ignore="MissingConstraints"
+        android:contentDescription="open_sanu_university"/>
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="160dp"
+        android:layout_height="158dp"
+        android:contentDescription="open_william_pitcher_college"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/william"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="386dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="160dp"
+        android:layout_height="158dp"
+        app:srcCompat="@drawable/scot"
+        tools:layout_editor_absoluteX="216dp"
+        tools:layout_editor_absoluteY="400dp"
+        android:scaleType="fitCenter"
+        tools:ignore="MissingConstraints"
+        android:contentDescription="open_eswatini_collage_of_technology"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

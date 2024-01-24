@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "1021619532499",
+    "project_id": "central-application-system",
+    "storage_bucket": "central-application-system.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1021619532499:android:d88d86865e9a2150249a26",
+        "android_client_info": {
+          "package_name": "com.example.clappsregistration"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOl8C_e_YZUrBYf8_fD8jsi6O52PWf49k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1021619532499:android:15e0a88374cc49df249a26",
+        "android_client_info": {
+          "package_name": "com.example.finaldraft"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOl8C_e_YZUrBYf8_fD8jsi6O52PWf49k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1021619532499:android:71891d28bee2ecf9249a26",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOl8C_e_YZUrBYf8_fD8jsi6O52PWf49k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
