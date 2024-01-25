@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".hoddetails"
-    android:background="@drawable/background"
+    android:background="@drawable/screen"
     android:layout_gravity="center"
 
     >
@@ -14,10 +14,10 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_gravity="center_horizontal"
-      android:background="@drawable/clapps"
+
       android:orientation="vertical"
-      android:padding="24dp"
-      app:CornerRadius="30dp"
+
+
 
       >
     <TextView

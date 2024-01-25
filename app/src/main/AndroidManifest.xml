@@ -19,7 +19,7 @@
             android:name=".Studyscreen"
             android:exported="false" />
         <activity
-            android:name=".sign_in"
+            android:name=".hoddetails"
             android:exported="false" />
         <activity
             android:name=".studentregistration"
@@ -37,7 +37,7 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".hoddetails"
+            android:name=".sign_in"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
