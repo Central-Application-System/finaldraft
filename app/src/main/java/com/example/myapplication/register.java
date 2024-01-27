@@ -13,9 +13,9 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class register extends AppCompatActivity {
     private Button btn,button;
-    TextInputEditText editTextemail,editTextpassword;
+
     Button hod;
-    FirebaseAuth firebaseAuth =  FirebaseAuth.getInstance();
+
 
 
     @SuppressLint("WrongViewCast")
@@ -35,15 +35,14 @@ public class register extends AppCompatActivity {
         );
 
 
-        editTextemail = findViewById(R.id.email);
-        editTextpassword = findViewById(R.id.password);
+
 
          hod=findViewById(R.id.hodButton);
 
          hod.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
-                 Intent intent = new Intent(register.this, hoddetails.class);
+                 Intent intent = new Intent(register.this, hodregistration.class);
                  startActivity(intent);
                  finish();
              }

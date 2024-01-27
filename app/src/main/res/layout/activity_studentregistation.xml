@@ -93,11 +93,11 @@
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/cpasswordet"
+                    android:id="@+id/cpasswordett"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/confirm_password"
-                    android:inputType="textPassword"
+                    android:hint="username"
+                    android:inputType="text"
                     android:paddingHorizontal="8dp"
                     android:paddingVertical="12dp"
                     android:drawableStart="@drawable/padlock"

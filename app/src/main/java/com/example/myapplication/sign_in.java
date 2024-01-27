@@ -29,7 +29,7 @@ FirebaseAuth firebaseAuth =  FirebaseAuth.getInstance();
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
-        login= findViewById(R.id.loginButton);
+        login = findViewById(R.id.loginButton);
 
         btn = (Button) findViewById(R.id.create_button);
 
@@ -38,38 +38,7 @@ FirebaseAuth firebaseAuth =  FirebaseAuth.getInstance();
             public void onClick(View v) {
                 Intent intent = new Intent(sign_in.this, register.class);
                 startActivity(intent);
-                login.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        String email, password;
-                        email = String.valueOf(editTextemail.getText());
-                        password= String.valueOf(editTextpassword.getText());
 
-                        if(TextUtils.isEmpty(email)){
-                            Toast.makeText(sign_in.this,"Enter Email",Toast.LENGTH_SHORT).show();
-                            return;
-                        }
-                        if(TextUtils.isEmpty(password)){
-                            Toast.makeText(sign_in.this,"Enter Password",Toast.LENGTH_SHORT).show();
-                            return;
-                        }
-                        firebaseAuth.signInWithEmailAndPassword(email,password)
-                                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<AuthResult> task) {
-                                        if(task.isSuccessful()){
-                                            Toast.makeText(sign_in.this,"login successful",Toast.LENGTH_SHORT).show();
-                                            Intent intent = new Intent(sign_in.this,register.class);
-                                            startActivity(intent);
-                                            finish();
-                                        }
-                                        else {
-                                            Toast.makeText(sign_in.this,"login unsuccessful",Toast.LENGTH_SHORT).show();
-                                        }
-                                    }
-                                });
-                    }
-                });
             }
         }
         );

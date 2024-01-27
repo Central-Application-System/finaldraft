@@ -52,9 +52,9 @@
                 android:layout_marginTop="40dp"
 
                 android:autofillHints="username"
-                android:drawableStart="@drawable/email"
+                android:drawableStart="@drawable/person"
                 android:drawablePadding="8dp"
-                android:hint="@string/email"
+                android:hint="username"
                 android:inputType="text"
                 android:padding="8dp"
                 android:textColor="@color/blue"
