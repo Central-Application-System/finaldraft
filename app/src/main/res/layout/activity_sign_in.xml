@@ -13,10 +13,10 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="70dp"
-        android:layout_height="66dp"
+        android:layout_width="111dp"
+        android:layout_height="87dp"
         android:contentDescription="@string/logo"
-        android:src="@drawable/logo" />
+        android:src="@drawable/clappsss" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"

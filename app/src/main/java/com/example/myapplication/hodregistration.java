@@ -72,7 +72,7 @@ public class hodregistration extends AppCompatActivity {
                            Toast.makeText(hodregistration.this, "Registration successful", Toast.LENGTH_SHORT).show();
 
                            // Start a new activity
-                           Intent intent = new Intent(hodregistration.this,sign_in.class);
+                           Intent intent = new Intent(hodregistration.this,hoddetails.class);
                            startActivity(intent);
                        } else {
                            // Handle the case where database or reference is null

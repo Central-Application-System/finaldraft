@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/screen"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".hodregistration">
+    tools:context=".hodregistration"
+    >
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
@@ -127,7 +128,7 @@
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="9dp"
-                android:backgroundTint="@color/blue"
+                android:backgroundTint="@color/lightblue"
                 android:insetTop="0dp"
                 android:text="register"
                 android:textColor="@color/white"

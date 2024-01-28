@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 
 
-public class enter_results extends AppCompatActivity {
+public class questions extends AppCompatActivity {
     String[]course = {"humanities","IT","engineering","Art and Design","business","Sciences","Communications/Media",
             ""};
     AutoCompleteTextView autoCompleteTextView;
@@ -18,7 +18,7 @@ public class enter_results extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_enter_results);
+        setContentView(R.layout.quetions);
         autoCompleteTextView = findViewById(R.id.questionet);
 
         AdapterInstitutions = new ArrayAdapter<String>(this,R.layout.list_institution,course);
