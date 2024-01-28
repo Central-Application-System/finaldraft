@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -16,22 +18,42 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 public class sign_in extends AppCompatActivity {
 
     private Button btn;
-    TextInputEditText editTextemail,editTextpassword;
+    EditText loginUsername,loginpassword;
+    TextView register;
 Button login;
 Button student;
 FirebaseAuth firebaseAuth =  FirebaseAuth.getInstance();
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
-        login = findViewById(R.id.loginButton);
 
         btn = (Button) findViewById(R.id.create_button);
+        loginUsername = findViewById(R.id.name);
+        loginpassword = findViewById(R.id.password);
+        login = findViewById(R.id.loginButton);
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!validateUsername() && !validatePassword()){
+                }else {
+                    checkUser();
+                }
+            }
+        });
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,4 +67,62 @@ FirebaseAuth firebaseAuth =  FirebaseAuth.getInstance();
 
     }
 
+
+    public boolean validateUsername(){
+        String val = loginUsername.getText().toString();
+        if(val.isEmpty()
+        ){
+            loginUsername.setError("username can not be empty");
+            return false;
+        }else {
+            loginUsername.setError(null);
+            return true;
+        }
+    }
+    public boolean validatePassword(){
+        String val = loginpassword.getText().toString();
+        if(val.isEmpty()
+        ){
+            loginpassword.setError("password can not be empty");
+            return false;
+        }else {
+            loginpassword.setError(null);
+            return true;
+        }
+    }
+
+    public void checkUser(){
+        String uusername =loginUsername.getText().toString().trim();
+        String userpassword = loginpassword.getText().toString().trim();
+
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users");
+        Query checkUserDatabase = reference.orderByChild("username").equalTo(uusername);
+        checkUserDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+                    loginUsername.setError(null);
+
+                    String passwordfrdb = snapshot.child(uusername).child("password").getValue(String.class);
+
+                    if(passwordfrdb.equals(userpassword)){
+                        loginUsername.setError(null);
+                        Intent intent = new Intent(sign_in.this,enter_results.class);
+                        startActivity(intent);
+                    }else {
+                        loginpassword.setError("invalid credentials");
+                        loginpassword.requestFocus();
+                    }
+                }else {
+                    loginUsername.setError("user does not exist");
+                    loginUsername.requestFocus();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
 }

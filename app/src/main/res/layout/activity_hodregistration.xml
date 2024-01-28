@@ -131,7 +131,8 @@
                 android:insetTop="0dp"
                 android:text="register"
                 android:textColor="@color/white"
-                app:cornerRadius="20dp" />
+                app:cornerRadius="20dp"
+                android:clickable="true"/>
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>

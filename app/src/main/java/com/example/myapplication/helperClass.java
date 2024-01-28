@@ -3,8 +3,8 @@ package com.example.myapplication;
 public class helperClass {
     String fullname,password,username,email;
 
-    public String getFullname() {
-        return fullname;
+    public String username() {
+        return username;
     }
 
     public void setFullname(String fullname) {
