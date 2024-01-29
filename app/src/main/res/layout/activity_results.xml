@@ -43,7 +43,22 @@
                 android:textColor="@color/black"
                 android:textSize="25dp"
                 android:textStyle="italic"
+
                 />
+            <EditText
+                android:id="@+id/resultpdf"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="40dp"
+
+                android:autofillHints="username"
+                android:drawablePadding="8dp"
+                android:hint="upload your results"
+                android:inputType="text"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/blue"
+                tools:ignore="TextFields" />
 
             <Button
                 android:id="@+id/nextButton"
