@@ -64,7 +64,7 @@ Button result;
                             Toast.makeText(studentregistration.this, "Registration successful", Toast.LENGTH_SHORT).show();
 
                             // Start a new activity
-                            Intent intent = new Intent(studentregistration.this, results.class);
+                            Intent intent = new Intent(studentregistration.this, sign_in.class);
                             startActivity(intent);
                         } else {
                             // Handle the case where database or reference is null
