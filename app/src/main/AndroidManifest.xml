@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,6 +17,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
+        <!-- Activities -->
+        <activity
+            android:name=".PdfUploadActivity"
+            android:exported="false" />
         <activity
             android:name=".results"
             android:exported="false" />
@@ -22,9 +31,6 @@
             android:name=".Studyscreen"
             android:exported="false" />
         <activity
-            android:name=".hoddetails"
-            android:exported="false" />
-        <activity
             android:name=".studentregistration"
             android:exported="false" />
         <activity
@@ -32,9 +38,6 @@
             android:exported="false" />
         <activity
             android:name=".profile"
-            android:exported="false" />
-        <activity
-            android:name=".hodregistration"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

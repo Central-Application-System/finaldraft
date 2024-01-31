@@ -1,22 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
     android:background="@drawable/screen"
+    android:gravity="center"
     tools:context=".sign_in">
-
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="70dp"
-        android:layout_height="66dp"
-        android:contentDescription="@string/logo"
-        android:src="@drawable/logo" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -24,35 +15,33 @@
         android:layout_margin="30dp"
         app:cardCornerRadius="30dp"
         app:cardElevation="20dp"
-        >
+        android:layout_below="@id/imageView">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/clapps"
-            android:orientation="vertical"
-            android:padding="24dp"
-            >
+            android:padding="24dp">
 
             <TextView
                 android:id="@+id/questions"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="what are you intrested in doing?"
+                android:text="what are you interested in doing?"
                 android:textColor="@color/black"
                 android:textSize="25sp"
                 android:textStyle="italic"
                 />
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/questionLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/questions"
                 android:layout_margin="16dp"
                 android:hint="choose a field"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-
-                >
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
 
                 <AutoCompleteTextView
                     android:id="@+id/questionet"
@@ -63,27 +52,19 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-
-
-
-
             <Button
                 android:id="@+id/loginButton"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
+                android:layout_below="@id/questionLayout"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="30dp"
                 android:backgroundTint="@color/lightblue"
                 android:text="next"
                 android:textSize="18sp"
                 app:cornerRadius="20dp"
                 android:textColor="@color/white"/>
-        </LinearLayout>
+        </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
-</LinearLayout>
-
-
-
-
-
-
+</RelativeLayout>

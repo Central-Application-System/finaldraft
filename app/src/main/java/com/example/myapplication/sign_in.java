@@ -53,7 +53,7 @@ FirebaseAuth firebaseAuth =  FirebaseAuth.getInstance();
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(sign_in.this, register.class);
+                Intent intent = new Intent(sign_in.this, studentregistration.class);
                 startActivity(intent);
 
             }
@@ -61,7 +61,6 @@ FirebaseAuth firebaseAuth =  FirebaseAuth.getInstance();
         );
 
     }
-
 
     public boolean validateUsername(){
         String val = loginUsername.getText().toString();

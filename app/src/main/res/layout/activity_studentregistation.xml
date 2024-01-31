@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/screen"
-    android:orientation="vertical"
     android:gravity="center"
     tools:context=".studentregistration">
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="12dp"
@@ -18,13 +19,13 @@
         app:strokeColor="@color/blue"
         app:strokeWidth="0.5dp">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:orientation="vertical"
-            android:padding="24dp"
-            android:background="@drawable/clapps">
+            android:background="@drawable/clapps"
+            android:padding="24dp">
+
             <TextView
                 android:id="@+id/loginText"
                 android:layout_width="match_parent"
@@ -33,15 +34,16 @@
                 android:textColor="@color/black"
                 android:textSize="24sp"
                 android:textStyle="italic"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="108dp" />
+                />
+
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:id="@+id/fullnametill"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/loginText"
                 android:layout_marginTop="12dp"
-                android:textColorHighlight="@color/cardview_dark_background" >
+                android:textColorHighlight="@color/cardview_dark_background">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/fullname"
@@ -52,8 +54,6 @@
                     android:paddingHorizontal="8dp"
                     android:paddingVertical="12dp"
                     android:drawableStart="@drawable/person"
-
-
                     />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -62,11 +62,11 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/fullnametill"
+                android:layout_marginTop="12dp"
                 app:counterEnabled="true"
                 app:counterMaxLength="15"
-                app:passwordToggleEnabled="true"
-                android:layout_marginTop="12dp"
-                >
+                app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/password"
@@ -87,10 +87,10 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/passwoedtill"
                 app:counterEnabled="true"
                 app:counterMaxLength="15"
-                app:passwordToggleEnabled="true"
-                >
+                app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/cpasswordett"
@@ -104,13 +104,12 @@
                     />
             </com.google.android.material.textfield.TextInputLayout>
 
-
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/emailtill"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                >
+                android:layout_below="@id/cpasswordtill">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/email"
@@ -124,24 +123,21 @@
                     android:drawableStart="@drawable/email"/>
             </com.google.android.material.textfield.TextInputLayout>
 
-
-
-
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/resultet"
                 style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/emailtill"
                 android:layout_marginTop="9dp"
+                android:layout_centerHorizontal="true"
                 android:backgroundTint="@color/lightblue"
                 android:insetTop="0dp"
                 android:text="register"
                 android:textColor="@color/white"
                 app:cornerRadius="20dp" />
 
-        </LinearLayout>
+        </RelativeLayout>
 
     </com.google.android.material.card.MaterialCardView>
-
-
-</LinearLayout>
+</RelativeLayout>
