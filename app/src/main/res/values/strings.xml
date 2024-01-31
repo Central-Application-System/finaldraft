@@ -16,5 +16,7 @@
     <string name="employee_number">employee number</string>
     <string name="register">register</string>
     <string name="empoyee_number">register</string>
+    <string name="choose_field_description">Choose a field</string>
+    <string name="next_button_description">Next button</string>
 
 </resources>

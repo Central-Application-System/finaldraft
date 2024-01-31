@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
     <!-- Permissions -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -19,7 +18,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
-        <!-- Activities -->
+        <activity
+            android:name=".business"
+            android:exported="false" />
+        <activity
+            android:name=".Art_and_Design"
+            android:exported="false" />
+        <activity
+            android:name=".engineering"
+            android:exported="false" />
+        <activity
+            android:name=".sciences"
+            android:exported="false" />
+        <activity
+            android:name=".humanities"
+            android:exported="false" />
+        <activity
+            android:name=".IT_course"
+            android:exported="false" /> <!-- Activities -->
         <activity
             android:name=".PdfUploadActivity"
             android:exported="false" />

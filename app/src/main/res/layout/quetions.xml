@@ -14,8 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
         app:cardCornerRadius="30dp"
-        app:cardElevation="20dp"
-        android:layout_below="@id/imageView">
+        app:cardElevation="20dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -48,6 +47,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="none"
+                    android:contentDescription="choose a field"
                     />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -63,7 +63,9 @@
                 android:text="next"
                 android:textSize="18sp"
                 app:cornerRadius="20dp"
-                android:textColor="@color/white"/>
+                android:textColor="@color/white"
+                android:contentDescription="next_button_description"/>
+
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 

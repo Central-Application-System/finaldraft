@@ -67,7 +67,7 @@ public class PdfUploadActivity extends AppCompatActivity {
                         Toast.makeText(PdfUploadActivity.this, "PDF uploaded successfully", Toast.LENGTH_SHORT).show();
 
                         // Navigate to the Questions activity
-                        Intent intent = new Intent(PdfUploadActivity.this, questions.class);
+                        Intent intent = new Intent(PdfUploadActivity.this,questions.class);
                         startActivity(intent);
                         finish(); // Optional: finish the current activity if you don't want to come back to it
                     })

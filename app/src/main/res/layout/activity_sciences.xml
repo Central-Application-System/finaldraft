@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@drawable/screen"
+    tools:context=".sign_in">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="20dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/clapps"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:id="@+id/arttext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sciences"
+                android:textColor="@color/black"
+                android:textSize="34sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/math"
+                android:layout_width="301dp"
+                android:layout_height="wrap_content"
+                android:text="1.Mathmetics"
+                android:textSize="23dp"
+                android:textColor="@color/white"
+                android:layout_marginTop="15dp"/>
+            <TextView
+                android:id="@+id/biochem"
+                android:layout_width="301dp"
+                android:layout_height="wrap_content"
+                android:text="2.Biochemistry"
+                android:textSize="23dp"
+                android:textColor="@color/white"
+                android:layout_marginTop="15dp"/>
+            <TextView
+                android:id="@+id/physics"
+                android:layout_width="301dp"
+                android:layout_height="wrap_content"
+                android:text="3.Physics"
+                android:textSize="23dp"
+                android:textColor="@color/white"
+                android:layout_marginTop="15dp"/>
+            <TextView
+                android:id="@+id/Astronomy"
+                android:layout_width="301dp"
+                android:layout_height="wrap_content"
+                android:text="3.Astronomy"
+                android:textSize="23dp"
+                android:textColor="@color/white"
+                android:layout_marginTop="15dp"/>
+
+
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
