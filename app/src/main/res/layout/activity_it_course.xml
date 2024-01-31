@@ -47,7 +47,7 @@
                 android:id="@+id/ict"
                 android:layout_width="301dp"
                 android:layout_height="wrap_content"
-                android:text="2.ICT"
+                android:text="2.Information communicatio technology"
                 android:textSize="23dp"
                 android:textColor="@color/white"
                 android:layout_marginTop="15dp"/>
@@ -55,7 +55,7 @@
                 android:id="@+id/it_tech"
                 android:layout_width="301dp"
                 android:layout_height="wrap_content"
-                android:text="3.IT"
+                android:text="3.Information technology"
                 android:textSize="23dp"
                 android:textColor="@color/white"
                 android:layout_marginTop="15dp"/>

@@ -37,28 +37,24 @@
             android:name=".IT_course"
             android:exported="false" /> <!-- Activities -->
         <activity
-            android:name=".PdfUploadActivity"
-            android:exported="false" />
-        <activity
-            android:name=".results"
-            android:exported="false" />
-        <activity
             android:name=".questions"
             android:exported="false" />
         <activity
-            android:name=".Studyscreen"
+            android:name=".PdfUploadActivity"
             android:exported="false" />
+        <activity
+            android:name=".sign_in"
+            android:exported="false" />
+
         <activity
             android:name=".studentregistration"
             android:exported="false" />
-        <activity
-            android:name=".profile"
-            android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".sign_in"
+            android:name=".results"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

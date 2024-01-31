@@ -52,19 +52,6 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <Button
-                android:id="@+id/loginButton"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:layout_below="@id/questionLayout"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="30dp"
-                android:backgroundTint="@color/lightblue"
-                android:text="next"
-                android:textSize="18sp"
-                app:cornerRadius="20dp"
-                android:textColor="@color/white"
-                android:contentDescription="next_button_description"/>
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>

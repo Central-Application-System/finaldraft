@@ -31,7 +31,7 @@
                 android:id="@+id/loginText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Please Enter Your Results"
+                android:text="Enter Your best six subjects"
                 android:textColor="@color/black"
                 android:textSize="25dp"
                 android:textStyle="italic" />
@@ -64,14 +64,17 @@
 
                 <!-- Row 1 -->
                 <TableRow>
-                    <TextView
+                    <EditText
+                        android:id="@+id/subject_1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Subject 1"
-                        android:padding="8dp"/>
+                        android:padding="8dp"
+                        />
 
                     <EditText
+                        android:id="@+id/grade_1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -82,21 +85,132 @@
 
                 <!-- Row 2 -->
                 <TableRow>
-                    <TextView
+                    <EditText
+                        android:id="@+id/subject_2"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Subject 2"
-                        android:padding="8dp"/>
+                        android:padding="8dp"
+                        android:layout_marginTop="14dp"/>
 
                     <EditText
+                        android:id="@+id/grade_2"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:hint="Grade"
                         android:inputType="text"
-                        android:padding="8dp"/>
+                        android:padding="8dp"
+                        android:layout_marginTop="14dp"/>
+
+
                 </TableRow>
+                <TableRow>
+                    <EditText
+                        android:id="@+id/subject_3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Subject 3"
+                        android:padding="8dp"
+                        android:layout_marginTop="14dp"/>
+
+                    <EditText
+                        android:id="@+id/grade_3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="Grade"
+                        android:inputType="text"
+                        android:padding="8dp"
+                        android:layout_marginTop="14dp"/>
+
+
+                </TableRow>
+                <TableRow>
+                    <EditText
+                        android:id="@+id/subject_4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Subject 4"
+                        android:padding="8dp"
+                        android:layout_marginTop="14dp"/>
+
+                    <EditText
+                        android:id="@+id/grade_4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="Grade"
+                        android:inputType="text"
+                        android:padding="8dp"
+                        android:layout_marginTop="14dp"/>
+
+
+                </TableRow>
+                <TableRow>
+                    <EditText
+                        android:id="@+id/subject_5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Subject 5"
+                        android:padding="8dp"
+                        android:layout_marginTop="14dp"/>
+
+                    <EditText
+                        android:id="@+id/grade_5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="Grade"
+                        android:inputType="text"
+                        android:padding="8dp"
+                        android:layout_marginTop="14dp"/>
+
+
+                </TableRow>
+                <TableRow>
+                    <EditText
+                        android:id="@+id/subject_6"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Subject 6"
+                        android:padding="8dp"
+                        android:layout_marginTop="14dp"/>
+
+                    <EditText
+                        android:id="@+id/grade_6"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="Grade"
+                        android:inputType="text"
+                        android:padding="8dp"
+                        android:layout_marginTop="14dp"/>
+
+
+                </TableRow>
+                <TableRow>
+
+
+                    <EditText
+                        android:id="@+id/total"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="total points"
+                        android:inputType="text"
+                        android:padding="8dp"
+                        android:layout_marginTop="14dp"
+                        android:textAlignment="center"/>
+
+
+                </TableRow>
+
 
             </TableLayout>
 
