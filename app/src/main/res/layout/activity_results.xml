@@ -1,27 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/screen"
     android:gravity="center"
-    tools:context=".sign_in">
+    tools:context=".results">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="111dp"
-        android:layout_height="87dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:contentDescription="@string/logo"
-        android:src="@drawable/clappsss" />
+    <!-- Logo ImageView -->
 
+    <!-- CardView for Results Input -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/imageView"
         android:layout_margin="30dp"
         app:cardCornerRadius="30dp"
         app:cardElevation="20dp">
@@ -34,41 +26,89 @@
             android:orientation="vertical"
             android:padding="24dp">
 
+
             <TextView
                 android:id="@+id/loginText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="please enter your results"
+                android:text="Please Enter Your Results"
                 android:textColor="@color/black"
                 android:textSize="25dp"
-                android:textStyle="italic"/>
+                android:textStyle="italic" />
 
-            <EditText
-                android:id="@+id/editTextName"
+            <TableLayout
+                android:id="@+id/tableLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:hint="Enter Name"/>
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true">
 
-            <EditText
-                android:id="@+id/editTextResults"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:hint="Enter Results"/>
+                <!-- Header Row -->
+                <TableRow>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Subject"
+                        android:textStyle="bold"
+                        android:padding="8dp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Grade"
+                        android:textStyle="bold"
+                        android:padding="8dp"/>
+                </TableRow>
+
+                <!-- Row 1 -->
+                <TableRow>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Subject 1"
+                        android:padding="8dp"/>
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="Grade"
+                        android:inputType="text"
+                        android:padding="8dp"/>
+                </TableRow>
+
+                <!-- Row 2 -->
+                <TableRow>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Subject 2"
+                        android:padding="8dp"/>
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="Grade"
+                        android:inputType="text"
+                        android:padding="8dp"/>
+                </TableRow>
+
+            </TableLayout>
 
             <Button
-                android:id="@+id/buttonUploadPDF"
+                android:id="@+id/buttonUploadResults"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="30dp"
-                android:text="Upload PDF"
+                android:text="Upload Results"
                 android:backgroundTint="@color/lightblue"
                 android:textSize="18sp"
-                android:padding="16dp"
-                android:layout_marginBottom="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginStart="16dp"/>
+                app:cornerRadius="20dp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </RelativeLayout>
