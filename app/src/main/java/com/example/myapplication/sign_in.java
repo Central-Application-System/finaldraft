@@ -62,24 +62,23 @@ FirebaseAuth firebaseAuth =  FirebaseAuth.getInstance();
 
     }
 
-    public boolean validateUsername(){
+    public boolean validateUsername() {
         String val = loginUsername.getText().toString();
-        if(val.isEmpty()
-        ){
-            loginUsername.setError("username can not be empty");
+        if (val.isEmpty()) {
+            loginUsername.setError("Username cannot be empty");
             return false;
-        }else {
+        } else {
             loginUsername.setError(null);
             return true;
         }
     }
-    public boolean validatePassword(){
+
+    public boolean validatePassword() {
         String val = loginpassword.getText().toString();
-        if(val.isEmpty()
-        ){
-            loginpassword.setError("password can not be empty");
+        if (val.isEmpty()) {
+            loginpassword.setError("Password cannot be empty");
             return false;
-        }else {
+        } else {
             loginpassword.setError(null);
             return true;
         }
@@ -101,7 +100,7 @@ FirebaseAuth firebaseAuth =  FirebaseAuth.getInstance();
 
                     if(passwordfrdb.equals(userpassword)){
                         loginUsername.setError(null);
-                        Intent intent = new Intent(sign_in.this, engineering.class);
+                        Intent intent = new Intent(sign_in.this, results.class);
                         startActivity(intent);
                     }else {
                         loginpassword.setError("invalid credentials");
