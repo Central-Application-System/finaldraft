@@ -31,9 +31,9 @@
                 android:id="@+id/loginText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Enter Your best six subjects"
+                android:text="@string/enter_your_best_six_subjects"
                 android:textColor="@color/black"
-                android:textSize="25dp"
+                android:textSize="25sp"
                 android:textStyle="italic" />
 
             <TableLayout
@@ -49,7 +49,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Subject"
+                        android:text="@string/subject"
                         android:textStyle="bold"
                         android:padding="8dp"/>
 
@@ -57,7 +57,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Grade"
+                        android:text="@string/grade"
                         android:textStyle="bold"
                         android:padding="8dp"/>
                 </TableRow>
@@ -69,9 +69,9 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Subject 1"
+                        android:hint="Subject 1"
                         android:padding="8dp"
-                        />
+                        android:autofillHints="Mathmetics" />
 
                     <EditText
                         android:id="@+id/grade_1"
@@ -90,9 +90,10 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Subject 2"
+                        android:hint="Subject 2"
                         android:padding="8dp"
-                        android:layout_marginTop="14dp"/>
+                        android:layout_marginTop="14dp"
+                        android:autofillHints="Physics" />
 
                     <EditText
                         android:id="@+id/grade_2"
@@ -112,9 +113,10 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Subject 3"
+                        android:hint="Subject 3"
                         android:padding="8dp"
-                        android:layout_marginTop="14dp"/>
+                        android:layout_marginTop="14dp"
+                        android:autofillHints="Accounts" />
 
                     <EditText
                         android:id="@+id/grade_3"
@@ -134,7 +136,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Subject 4"
+                        android:hint="Subject 4"
                         android:padding="8dp"
                         android:layout_marginTop="14dp"/>
 
@@ -156,7 +158,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Subject 5"
+                        android:hint="Subject 5"
                         android:padding="8dp"
                         android:layout_marginTop="14dp"/>
 
@@ -178,7 +180,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Subject 6"
+                        android:hint="Subject 6"
                         android:padding="8dp"
                         android:layout_marginTop="14dp"/>
 

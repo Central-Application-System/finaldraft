@@ -101,7 +101,7 @@ FirebaseAuth firebaseAuth =  FirebaseAuth.getInstance();
 
                     if(passwordfrdb.equals(userpassword)){
                         loginUsername.setError(null);
-                        Intent intent = new Intent(sign_in.this, results.class);
+                        Intent intent = new Intent(sign_in.this, engineering.class);
                         startActivity(intent);
                     }else {
                         loginpassword.setError("invalid credentials");

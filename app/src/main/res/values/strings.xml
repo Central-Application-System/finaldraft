@@ -18,5 +18,8 @@
     <string name="empoyee_number">register</string>
     <string name="choose_field_description">Choose a field</string>
     <string name="next_button_description">Next button</string>
+    <string name="enter_your_best_six_subjects">Enter Your best six subjects</string>
+    <string name="subject">Subject</string>
+    <string name="grade">Grade</string>
 
 </resources>
