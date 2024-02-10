@@ -18,6 +18,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
+
+        <activity
+            android:name=".vidiography"
+            android:exported="false" />
+        <activity
+            android:name=".photography"
+            android:exported="false" />
+        <activity
+            android:name=".perfomance"
+            android:exported="false" />
+        <activity
+            android:name=".musicology"
+            android:exported="false" />
+
+        <activity
+            android:name=".public_relations"
+            android:exported="false" />
+
         <activity
             android:name=".business"
             android:exported="false" />
@@ -36,7 +54,6 @@
         <activity
             android:name=".IT_course"
             android:exported="false" />
-
         <activity
             android:name=".PdfUploadActivity"
             android:exported="false" />
@@ -46,11 +63,9 @@
         <activity
             android:name=".results"
             android:exported="false" />
-
         <activity
             android:name=".studentregistration"
             android:exported="false" />
-
         <activity
             android:name=".MainActivity"
             android:exported="false" />

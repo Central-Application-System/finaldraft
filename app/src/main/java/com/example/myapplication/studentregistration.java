@@ -9,77 +9,104 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import androidx.annotation.NonNull;
+
+
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthException;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthInvalidUserException;
+import com.google.firebase.auth.FirebaseUser;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class studentregistration extends AppCompatActivity {
+    private FirebaseAuth firebaseAuth;
+    private TextInputEditText fullNameEditText, passwordEditText, confirmPasswordEditText, emailEditText;
 
-    EditText signupemail,signuppassword,signupfullname,signupusername;
+
+
     FirebaseDatabase database;
     DatabaseReference reference;
-    Button register;
 Button result;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_studentregistation);
-        database = FirebaseDatabase.getInstance();
-        reference = database.getReference("users");
 
-        signupfullname = findViewById(R.id.fullname);
-        signupemail = findViewById(R.id.email);
-        signuppassword = findViewById(R.id.password);
-        signupusername = findViewById(R.id.cpasswordett);
 
-        register = findViewById(R.id.resultet);
+        firebaseAuth = FirebaseAuth.getInstance();
+        fullNameEditText = findViewById(R.id.fullname);
+        passwordEditText = findViewById(R.id.password);
+        confirmPasswordEditText = findViewById(R.id.cpasswordett);
+        emailEditText = findViewById(R.id.email);
+        MaterialButton registerButton = findViewById(R.id.resultet);
 
-        register.setOnClickListener(new View.OnClickListener() {
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
-                // Ensure that the EditText fields are not null
-                if (signuppassword != null && signupfullname != null &&
-                        signupemail != null && signupusername != null) {
-
-                    // Retrieve user input
-                    String password = signuppassword.getText().toString();
-                    String fullname = signupfullname.getText().toString();
-                    String email = signupemail.getText().toString();
-                    String username = signupusername.getText().toString();
-
-                    // Ensure that none of the retrieved strings are null or empty
-                    if (password != null && !password.isEmpty() &&
-                            fullname != null && !fullname.isEmpty() &&
-                            email != null && !email.isEmpty() &&
-                            username != null && !username.isEmpty()) {
-
-                        // Create a helperClass object
-                        helperClass helperClass = new helperClass(fullname, password, username, email);
-
-                        // Ensure that the Firebase Database objects are not null
-                        if (database != null && reference != null) {
-                            // Save data to Firebase Database
-                            reference.child(username).setValue(helperClass);
-
-                            // Display a toast message
-                            Toast.makeText(studentregistration.this, "Registration successful", Toast.LENGTH_SHORT).show();
-
-                            // Start a new activity
-                            Intent intent = new Intent(studentregistration.this, sign_in.class);
-                            startActivity(intent);
-                        } else {
-                            // Handle the case where database or reference is null
-                            Log.e("NullCheck", "Firebase Database objects are null");
-                        }
-                    } else {
-                        // Handle the case where any of the retrieved strings is null or empty
-                        Log.e("NullCheck", "One or more input fields are null or empty");
-                    }
-                } else {
-                    // Handle the case where any of the EditText fields is null
-                    Log.e("NullCheck", "One or more EditText fields are null");
-                }
+                registerUser();
             }
         });
+    }
+    private void registerUser() {
+        String fullName = fullNameEditText.getText().toString().trim();
+        String password = passwordEditText.getText().toString().trim();
+        String confirmPassword = confirmPasswordEditText.getText().toString().trim();
+        String email = emailEditText.getText().toString().trim();
 
-}
+        // Check if fields are not empty
+        if (fullName.isEmpty() || password.isEmpty() || confirmPassword.isEmpty() || email.isEmpty()) {
+            Toast.makeText(this, "Please fill in all the fields", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Check if password and confirm password match
+        if (!password.equals(confirmPassword)) {
+            Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Create a new user with email and password
+        firebaseAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, task -> {
+                    if (task.isSuccessful()) {
+                        FirebaseUser user = firebaseAuth.getCurrentUser();
+
+                        // Additional user data
+                        User newUser = new User();
+                        newUser.setFullName(fullName);
+                        newUser.setEmail(email);
+
+                        // Store additional user data in the Realtime Database
+                        DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference("users");
+                        usersRef.child(user.getUid()).setValue(newUser);
+
+                        // Registration success, update UI or navigate to another activity
+                        Toast.makeText(studentregistration.this, "Registration successful", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(studentregistration.this, sign_in.class));
+                        finish();// Close the current activity to prevent going back to registration screen
+                    } else {
+                        // If registration fails, display a message to the user
+                        try {
+                            throw task.getException();
+                        } catch (FirebaseAuthInvalidUserException e) {
+                            // Handle invalid user exception (e.g., invalid email format)
+                            Toast.makeText(studentregistration.this, "Invalid email address", Toast.LENGTH_SHORT).show();
+                        } catch (FirebaseAuthInvalidCredentialsException e) {
+                            // Handle invalid credentials exception (e.g., weak password)
+                            Toast.makeText(studentregistration.this, "Weak password, please choose a stronger one", Toast.LENGTH_SHORT).show();
+                        } catch (FirebaseAuthException e) {
+                            // Handle other FirebaseAuthExceptions
+                            Toast.makeText(studentregistration.this, "Registration failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                        } catch (Exception e) {
+                            // Handle other exceptions
+                            Toast.makeText(studentregistration.this, "Registration failed", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+    }
     }

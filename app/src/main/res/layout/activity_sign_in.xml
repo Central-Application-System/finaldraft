@@ -45,35 +45,35 @@
                 android:textStyle="italic" />
 
             <EditText
-                android:id="@+id/name"
+                android:id="@+id/emailet"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="40dp"
                 android:autofillHints="username"
-                android:drawableStart="@drawable/person"
+                android:drawableStart="@drawable/email"
                 android:drawablePadding="8dp"
-                android:hint="username"
-                android:inputType="text"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
                 android:padding="8dp"
                 android:textColor="@color/blue"
                 android:textColorHighlight="@color/blue"
                 tools:ignore="TextFields" />
 
             <EditText
-                android:id="@+id/password"
+                android:id="@+id/passwordet"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
                 android:autofillHints="password"
                 android:drawableStart="@drawable/padlock"
                 android:drawablePadding="8dp"
-                android:hint="@string/password"
+                android:hint="Password"
                 android:inputType="textPassword"
                 android:padding="8dp"
                 android:textColor="@color/white"
                 android:textColorHighlight="@color/white" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/loginButton"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"

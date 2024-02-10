@@ -26,11 +26,6 @@ public class Art_and_Design extends AppCompatActivity {
         setContentView(R.layout.activity_art_and_design);
 
 
-        // If you want to launch a new activity based on the selected item, you can use an Intent
-        // Example:
-        // if (selectedItem.equals("Item 1")) {
-        //     Intent intent = new Intent(YourActivity.this, NewActivity.class);
-        //     startActivity(intent);
-        // }
+
     }
 }

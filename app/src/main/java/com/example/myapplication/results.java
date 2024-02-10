@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -53,8 +54,13 @@ public class results extends AppCompatActivity {
         buttonUploadResults.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int totalPoints = calculateTotalPoints();
-                uploadResultsToFirebase(totalPoints);
+                try {
+                    int totalPoints = calculateTotalPoints();
+                    uploadResultsToFirebase(totalPoints);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    Toast.makeText(results.this, "Error uploading results", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
@@ -87,34 +93,39 @@ public class results extends AppCompatActivity {
     }
 
     private void uploadResultsToFirebase(int totalPoints) {
-        DatabaseReference resultsReference = FirebaseDatabase.getInstance().getReference("results");
+        FirebaseUser currentUser = firebaseAuth.getCurrentUser();
 
-        // Get the current user's ID
-        String userId = firebaseAuth.getCurrentUser().getUid();
+        if (currentUser != null) {
+            String userId = currentUser.getUid();
 
-        // Create a map to store the results data
-        Map<String, Object> resultsData = new HashMap<>();
-        resultsData.put("subject1", editTextSubject1.getText().toString());
-        resultsData.put("grade1", editTextGrade1.getText().toString());
-        resultsData.put("subject2", editTextSubject2.getText().toString());
-        resultsData.put("grade2", editTextGrade2.getText().toString());
-        resultsData.put("subject3", editTextSubject3.getText().toString());
-        resultsData.put("grade3", editTextGrade3.getText().toString());
-        resultsData.put("subject4", editTextSubject4.getText().toString());
-        resultsData.put("grade4", editTextGrade4.getText().toString());
-        resultsData.put("subject5", editTextSubject5.getText().toString());
-        resultsData.put("grade5", editTextGrade5.getText().toString());
-        resultsData.put("subject6", editTextSubject6.getText().toString());
-        resultsData.put("grade6", editTextGrade6.getText().toString());
-        resultsData.put("totalPoints", totalPoints);
+            DatabaseReference resultsReference = FirebaseDatabase.getInstance().getReference("results");
 
-        resultsReference.child(userId).updateChildren(resultsData);
+            // Create a map to store the results data
+            Map<String, Object> resultsData = new HashMap<>();
+            resultsData.put("subject1", editTextSubject1.getText().toString());
+            resultsData.put("grade1", editTextGrade1.getText().toString());
+            resultsData.put("subject2", editTextSubject2.getText().toString());
+            resultsData.put("grade2", editTextGrade2.getText().toString());
+            resultsData.put("subject3", editTextSubject3.getText().toString());
+            resultsData.put("grade3", editTextGrade3.getText().toString());
+            resultsData.put("subject4", editTextSubject4.getText().toString());
+            resultsData.put("grade4", editTextGrade4.getText().toString());
+            resultsData.put("subject5", editTextSubject5.getText().toString());
+            resultsData.put("grade5", editTextGrade5.getText().toString());
+            resultsData.put("subject6", editTextSubject6.getText().toString());
+            resultsData.put("grade6", editTextGrade6.getText().toString());
+            resultsData.put("totalPoints", totalPoints);
 
-        Toast.makeText(results.this, "Results uploaded successfully", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(results.this, PdfUploadActivity.class));
+            resultsReference.child(userId).updateChildren(resultsData);
 
+            Toast.makeText(results.this, "Results uploaded successfully", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(results.this, PdfUploadActivity.class));
+        } else {
+            // Handle the case where the user is not authenticated
+            Toast.makeText(results.this, "User not authenticated", Toast.LENGTH_SHORT).show();
+            // You may want to redirect the user to the sign-in page or handle it accordingly.
+        }
     }
-
     private int convertGradeToPoints(String grade) {
 
         switch (grade.toUpperCase()) {
