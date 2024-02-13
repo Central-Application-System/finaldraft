@@ -84,12 +84,18 @@ public class results extends AppCompatActivity {
 
     private void populateSubjectGradeMap() {
         subjectGradeMap.clear();
-        subjectGradeMap.put(editTextSubject1.getText().toString(), editTextGrade1.getText().toString());
-        subjectGradeMap.put(editTextSubject2.getText().toString(), editTextGrade2.getText().toString());
-        subjectGradeMap.put(editTextSubject3.getText().toString(), editTextGrade3.getText().toString());
-        subjectGradeMap.put(editTextSubject4.getText().toString(), editTextGrade4.getText().toString());
-        subjectGradeMap.put(editTextSubject5.getText().toString(), editTextGrade5.getText().toString());
-        subjectGradeMap.put(editTextSubject6.getText().toString(), editTextGrade6.getText().toString());
+        subjectGradeMap.put(editTextSubject1.getText().toString(),
+                editTextGrade1.getText().toString());
+        subjectGradeMap.put(editTextSubject2.getText().toString(),
+                editTextGrade2.getText().toString());
+        subjectGradeMap.put(editTextSubject3.getText().toString(),
+                editTextGrade3.getText().toString());
+        subjectGradeMap.put(editTextSubject4.getText().toString(),
+                editTextGrade4.getText().toString());
+        subjectGradeMap.put(editTextSubject5.getText().toString(),
+                editTextGrade5.getText().toString());
+        subjectGradeMap.put(editTextSubject6.getText().toString(),
+                editTextGrade6.getText().toString());
     }
 
     private void uploadResultsToFirebase(int totalPoints) {
