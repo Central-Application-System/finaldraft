@@ -42,7 +42,11 @@
                 android:text="1.civil engineering"
                 android:textSize="23dp"
                 android:textColor="@color/white"
-                android:layout_marginTop="15dp"/>
+                android:layout_marginTop="15dp"
+                android:background="@drawable/card_background"
+                android:elevation="3dp"
+                android:padding="10dp"
+                />
             <TextView
                 android:id="@+id/electrical"
                 android:layout_width="301dp"
