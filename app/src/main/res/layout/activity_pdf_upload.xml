@@ -33,17 +33,36 @@
                 android:textSize="25dp"
                 android:textStyle="italic" />
 
+            <TableRow
+                android:layout_width="302dp"
+                android:layout_height="wrap_content">
+
+
+                <EditText
+                    android:id="@+id/totalpoints"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_weight="1"
+                    android:hint="total points"
+                    android:inputType="text"
+                    android:padding="8dp"
+                    android:textAlignment="center" />
+
+
+            </TableRow>
+
             <Button
                 android:id="@+id/buttonUploadpdf"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
+                android:layout_gravity="center"
                 android:layout_marginTop="30dp"
-                android:text="Upload Results"
                 android:backgroundTint="@color/white"
-                android:textSize="18sp"
-                app:cornerRadius="20dp"
+                android:text="Upload Results"
                 android:textColor="@color/black"
-                android:layout_gravity="center"/>
+                android:textSize="18sp"
+                app:cornerRadius="20dp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </RelativeLayout>

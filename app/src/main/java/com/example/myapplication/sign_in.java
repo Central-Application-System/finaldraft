@@ -77,7 +77,7 @@ public class sign_in extends AppCompatActivity {
                         Toast.makeText(sign_in.this, "Sign-in successful", Toast.LENGTH_SHORT).show();
 
                         // Example: Navigate to another activity
-                        startActivity(new Intent(sign_in.this, results.class));
+                        startActivity(new Intent(sign_in.this, subjectsList.class));
                         finish(); // Close the current activity to prevent going back to sign-in screen
                     } else {
                         // If sign-in fails, display a message to the user

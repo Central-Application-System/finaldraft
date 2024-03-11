@@ -1,0 +1,93 @@
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+
+    >
+
+    <RelativeLayout
+        android:layout_width="395dp"
+        android:layout_height="105dp"
+        android:padding="16dp"
+        android:background="@color/lightblue"
+        >
+
+        <!-- TextView (Subject) on the left -->
+
+        <!-- Divider Line -->
+
+        <TextView
+            android:id="@+id/textViewSubject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Subject"
+            android:textColor="@color/white"
+            android:textAppearance="?android:textAppearanceMedium" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="?android:attr/dividerVertical"
+            android:elevation="8dp"
+            />
+
+        <!-- RadioGroup on the right -->
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="62dp"
+            android:layout_marginBottom="7dp"
+            android:layout_toEndOf="@id/divider"
+            android:orientation="horizontal">
+
+            <!-- RadioButton 1 -->
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="A"
+                android:textColor="@color/white" />
+
+            <!-- RadioButton 2 -->
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="B"
+                android:textColor="@color/white" />
+
+            <!-- RadioButton 3 -->
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="C"
+                android:textColor="@color/white" />
+
+            <!-- RadioButton 4 -->
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="D"
+                android:textColor="@color/white" />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="E"
+                android:textColor="@color/white" />
+
+            <RadioButton
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="E" />
+        </RadioGroup>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

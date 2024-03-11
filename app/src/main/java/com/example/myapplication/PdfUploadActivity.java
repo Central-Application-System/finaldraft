@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,6 +18,7 @@ import java.util.Objects;
 
 public class PdfUploadActivity extends AppCompatActivity {
 
+
     private static final int PDF_UPLOAD_REQUEST_CODE = 1;
     private StorageReference storageReference;
 
@@ -25,7 +27,12 @@ public class PdfUploadActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pdf_upload);
 
+
+        EditText totalPointsEditText = findViewById(R.id.totalpoints);
+        int totalPoints = getIntent().getIntExtra("totalPoints", 0);
+
         storageReference = FirebaseStorage.getInstance().getReference();
+        totalPointsEditText.setText(String.valueOf(totalPoints));
 
         Button uploadPdfButton = findViewById(R.id.buttonUploadpdf);
         uploadPdfButton.setOnClickListener(new View.OnClickListener() {
