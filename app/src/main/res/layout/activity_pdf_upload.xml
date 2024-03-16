@@ -32,25 +32,29 @@
                 android:textColor="@color/black"
                 android:textSize="25dp"
                 android:textStyle="italic" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="your total points are:"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:textStyle="italic" />
 
-            <TableRow
-                android:layout_width="302dp"
-                android:layout_height="wrap_content">
 
 
-                <EditText
+                <TextView
                     android:id="@+id/totalpoints"
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
-                    android:layout_marginTop="14dp"
+
                     android:layout_weight="1"
                     android:hint="total points"
                     android:inputType="text"
-                    android:padding="8dp"
-                    android:textAlignment="center" />
+                    android:textSize="19dp"
+                    android:textColor="@color/black" />
 
 
-            </TableRow>
+
 
             <Button
                 android:id="@+id/buttonUploadpdf"

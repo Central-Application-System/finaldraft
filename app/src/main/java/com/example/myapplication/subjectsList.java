@@ -23,10 +23,7 @@ import java.util.Map;
 public class subjectsList extends AppCompatActivity {
 
     private Map<String, Integer> gradePointMap;
-    private Button studentNext;
     private MyAdapter myAdapter;
-    private RecyclerView recyclerView;
-    private DatabaseReference database;
     private ArrayList<getsubject> list;
 
     @Override
@@ -34,14 +31,16 @@ public class subjectsList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subjects_list);
 
-        recyclerView = findViewById(R.id.subjectlist);
-        database = FirebaseDatabase.getInstance().getReference("subjects");
+        RecyclerView recyclerView = findViewById(R.id.subjectlist);
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("subjects");
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         list = new ArrayList<>();
         myAdapter = new MyAdapter(this, list, new MyAdapter.OnOptionSelectedListener() {
             @Override
             public void onOptionSelected(int position, String selectedOption) {
-                // Handle the option selected event
+                // Calculate total points
+                int totalPoints = myAdapter.calculateTotalPoints();
+                // Update UI with total points if needed
             }
         });
         recyclerView.setAdapter(myAdapter);
@@ -74,31 +73,23 @@ public class subjectsList extends AppCompatActivity {
             }
         });
 
-        studentNext = findViewById(R.id.studentNext);
+        Button studentNext = findViewById(R.id.studentNext);
 
         studentNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Calculate total points for the best six results
-                int totalPoints = calculateTotalPointsForBestSix();
+                // Calculate total points
+                int totalPoints = myAdapter.calculateTotalPoints();
 
-                // Navigate to the activity_pdf_upload activity and pass the totalPoints
+                // Store the totalPoints in Firebase
+                DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("TotalPoints");
+                databaseReference.setValue(totalPoints);
+
+                // Navigate to the PdfUploadActivity and pass the totalPoints
                 Intent intent = new Intent(subjectsList.this, PdfUploadActivity.class);
                 intent.putExtra("totalPoints", totalPoints);
                 startActivity(intent);
             }
         });
-    }
-
-    private int calculateTotalPointsForBestSix() {
-        int totalPoints = 0;
-        for (int i = 0; i < myAdapter.getItemCount(); i++) {
-            int subjectPoints = myAdapter.calculateTotalPoints(i);
-            Log.d("CalculationDebug", "Subject " + i + " Points: " + subjectPoints);
-            totalPoints += subjectPoints;
-        }
-
-        Log.d("CalculationDebug", "Total Points: " + totalPoints);
-        return totalPoints;
     }
 }

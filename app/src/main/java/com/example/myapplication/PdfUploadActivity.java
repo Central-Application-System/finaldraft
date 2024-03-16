@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -27,12 +28,16 @@ public class PdfUploadActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pdf_upload);
 
-
-        EditText totalPointsEditText = findViewById(R.id.totalpoints);
+        // Retrieve the total points from the intent extras
         int totalPoints = getIntent().getIntExtra("totalPoints", 0);
 
+        // Now you can use the totalPoints value as needed
+        // For example, display it in a TextView
+        TextView totalPointsTextView = findViewById(R.id.totalpoints);
+        totalPointsTextView.setText("Total Points: " + totalPoints);
+
         storageReference = FirebaseStorage.getInstance().getReference();
-        totalPointsEditText.setText(String.valueOf(totalPoints));
+        totalPointsTextView.setText(String.valueOf(totalPoints));
 
         Button uploadPdfButton = findViewById(R.id.buttonUploadpdf);
         uploadPdfButton.setOnClickListener(new View.OnClickListener() {
@@ -74,7 +79,7 @@ public class PdfUploadActivity extends AppCompatActivity {
                         Toast.makeText(PdfUploadActivity.this, "PDF uploaded successfully", Toast.LENGTH_SHORT).show();
 
                         // Navigate to the Questions activity
-                        Intent intent = new Intent(PdfUploadActivity.this,questions.class);
+                        Intent intent = new Intent(PdfUploadActivity.this,List_Of_Institutions.class);
                         startActivity(intent);
                         finish(); // Optional: finish the current activity if you don't want to come back to it
                     })

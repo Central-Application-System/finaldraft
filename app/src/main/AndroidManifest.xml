@@ -5,8 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:allowBackup="true"
@@ -19,7 +18,22 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
+            android:name=".payment"
+            android:exported="false" />
+        <activity
+            android:name=".CoursesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FacultyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".subjectsList"
+            android:exported="false" />
+        <activity
             android:name=".institutions"
+            android:exported="false" />
+        <activity
+            android:name=".sign_in"
             android:exported="false" />
         <activity
             android:name=".vidiography"
@@ -35,7 +49,9 @@
             android:exported="false" />
         <activity
             android:name=".public_relations"
-            android:exported="false" />
+            android:exported="false" /> <!-- <activity -->
+        <!-- android:name=".List_Of_Institutions" -->
+        <!-- android:exported="false" /> -->
         <activity
             android:name=".business"
             android:exported="false" />
@@ -58,7 +74,7 @@
             android:name=".PdfUploadActivity"
             android:exported="false" />
         <activity
-            android:name=".sign_in"
+            android:name=".questions"
             android:exported="false" />
         <activity
             android:name=".results"
@@ -70,7 +86,7 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".questions"
+            android:name=".List_Of_Institutions"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

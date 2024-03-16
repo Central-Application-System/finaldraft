@@ -1,0 +1,44 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/screen">
+
+    <TextView
+        android:id="@+id/institutionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/facultyTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_below="@id/institutionTextView"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/coursesLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Courses:
+          points:34"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_below="@id/facultyTextView"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="16dp"/>
+
+    <ListView
+        android:id="@+id/courseListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/coursesLabel"
+        android:layout_marginTop="10dp"
+        android:divider="@null"/>
+
+</RelativeLayout>

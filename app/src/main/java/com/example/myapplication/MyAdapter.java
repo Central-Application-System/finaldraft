@@ -17,28 +17,14 @@ import java.util.Map; // Add this import
 import android.content.Context;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
-
     private Context context;
     private ArrayList<getsubject> list;
     private OnOptionSelectedListener optionSelectedListener;
-
-    private Map<String, Integer> gradePointMap; // Define gradePointMap
-
-    public int calculateTotalPoints(int position) {
-        // Get the data for the item at the given position
-        getsubject subject = list.get(position);
-
-        int totalPoints = 0;
-        for (RadioButton radioButton : subject.getSelectedRadioButtons()) {
-            String selectedGrade = radioButton.getText().toString();
-            totalPoints += gradePointMap.get(selectedGrade);
-        }
-
-        return totalPoints;
-    }
+    private Map<String, Integer> gradePointMap;
 
     public interface OnOptionSelectedListener {
         void onOptionSelected(int position, String selectedOption);
+
     }
 
     public MyAdapter(Context context, ArrayList<getsubject> list, OnOptionSelectedListener listener) {
@@ -46,12 +32,26 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         this.list = list;
         this.optionSelectedListener = listener;
 
-        // Initialize gradePointMap (modify as per your grade-point mapping)
+        // Initialize gradePointMap
         gradePointMap = new HashMap<>();
-        gradePointMap.put("A", 4);
-        gradePointMap.put("B", 3);
-        gradePointMap.put("C", 2);
+        gradePointMap.put("A", 8);
+        gradePointMap.put("B", 7);
+        gradePointMap.put("C", 6);
+        gradePointMap.put("D", 5);
+        gradePointMap.put("E", 4);
         // Add other grade-point mappings as needed
+    }
+
+    public int calculateTotalPoints() {
+        int totalPoints = 0;
+        for (getsubject subject : list) {
+            for (RadioButton radioButton : subject.getSelectedRadioButtons()) {
+                String selectedGrade = radioButton.getText().toString();
+                // Add grade points to total points
+                totalPoints += gradePointMap.get(selectedGrade);
+            }
+        }
+        return totalPoints;
     }
 
     @NonNull
@@ -76,12 +76,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView subjects;
+        RadioGroup radioGroup;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
             subjects = itemView.findViewById(R.id.textViewSubject);
-            RadioGroup radioGroup = itemView.findViewById(R.id.radioGroup);
+            radioGroup = itemView.findViewById(R.id.radioGroup);
 
             // Set up RadioGroup listener
             radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -89,8 +90,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 public void onCheckedChanged(RadioGroup group, int checkedId) {
                     RadioButton selectedRadioButton = itemView.findViewById(checkedId);
                     if (selectedRadioButton != null) {
+                        // Get the corresponding getsubject object
+                        getsubject currentSubject = list.get(getAdapterPosition());
+
+                        currentSubject.addSelectedRadioButton(selectedRadioButton);
+
                         String selectedOption = selectedRadioButton.getText().toString();
-                        // Notify the listener about the selected option
+
                         if (optionSelectedListener != null) {
                             optionSelectedListener.onOptionSelected(getAdapterPosition(), selectedOption);
                         }

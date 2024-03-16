@@ -49,5 +49,6 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:32.7.2"))
     implementation("com.google.firebase:firebase-auth")
     implementation("net.sourceforge.jtds:jtds:1.3.1")
+    implementation ("com.squareup.okhttp3:okhttp:4.9.1")
 
 }
